@@ -1,0 +1,58 @@
+<!Document html>
+    <html>
+        <head>
+    <link type="text/css" rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">"></script>
+    <script type="text/javascript">
+    function fnSubmit(){
+        //alert($("#fname").val());
+        console.log($("#fname").val());
+        var is_error = false;
+        if($("#fname").val() == ''){
+            alert('Name is required!!!');
+            is_error = true;
+        }
+        if($("#email").val() == ''){
+            alert('Email is required!!!');
+            is_error = true;
+        }
+        if(is_error)
+            event.preventDefault();
+    }
+    </script>
+</head>
+<body style="width: 600px;">
+        <div style="border: 1px solid #cccccc; margin: 10px; padding: 20px;">
+        <form action="index-submit.php" method="POST" onsubmit="fnSubmit()">
+            <div class="h1">My Form</div>
+            <table class="tbl">
+                <tr>
+                    <td><label class="fld-labl">Name:</label> </td><td><input type="text" name="fname" id="fname" maxlength="50" class="fld-txt" /></td>
+                </tr>
+                <tr>
+                    <td><label class="fld-labl">Email:</label> </td><td><input type="email" name="email" id="email" maxlength="50" class="fld-txt"/></td>
+                </tr>
+                <tr>
+                    <td><label class="fld-labl">Gender:</label> </td><td><input type="radio" name="gender" id="gender" value="M"><label class="fld-labl">Male</label> &nbsp;<input type="radio" name="gender" value="F"><label class="fld-labl">Female</label></td>
+                </tr>
+                <tr>
+                    <td><label class="fld-labl">Phone:</label> </td><td><input type="number" name="txtphone" id="txtphone" maxlength="10"  class="fld-txt"/></td>
+                </tr>
+                <tr>
+                    <td><label class="fld-labl">Eduction:</label> </td><td><input type="checkbox" name="edu[]" id="edu[]" value="MCA"><label class="fld-labl">MCA</label> &nbsp;<input type="checkbox" name="edu[]" value="MBA"><label class="fld-labl">MBA</label></td>
+                </tr>
+                <tr>
+                    <td><label class="fld-labl">Address:</label> </td><td><textarea class="fld-txtarea" name="address" id="address" rows="30"></textarea></td>
+                </tr>
+                <tr>
+                    <td><label class="fld-labl">Country: </label></td><td><select name="country" class="fld-txt" id="country"><option value="IN">India</option><option value="US">USA</option></select></td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center"><input type="submit" value="Save" class="btn"/></td>
+                </tr>
+            </table>
+        </form>
+        </div>
+    </body>
+
+    </html>
